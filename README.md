@@ -64,3 +64,72 @@ Table: students
 - Auto-generated ID display (read-only field)
 
 ================================================================================
+
+
+
+EXECUTION INSTRUCTIONS
+
+
+================================================================================
+EXECUTION INSTRUCTIONS - Student Management System
+================================================================================
+
+PREREQUISITES:
+--------------------------------------------------------------------------------
+1. Java Development Kit (JDK) 8 or higher installed
+2. SQLite JDBC Driver (sqlite-jdbc-3.46.0.0.jar) downloaded from:
+   https://github.com/xerial/sqlite-jdbc/releases
+
+SETUP STEPS:
+--------------------------------------------------------------------------------
+1. Create a folder for your project (e.g., "StudentManagementSystem")
+
+2. Place all 5 Java files in this folder:
+   - StudentDB.java
+   - DBConnection.java
+   - Student.java
+   - StudentDAO.java
+   - StudentGUI.java
+
+3. Place the SQLite JDBC JAR file in the same folder
+
+COMPILATION:
+--------------------------------------------------------------------------------
+Open command prompt/terminal in the project folder and run:
+
+   javac -cp ".;sqlite-jdbc-3.46.0.0.jar" *.java
+
+Note: On Linux/Mac, use colon instead of semicolon:
+   javac -cp ".:sqlite-jdbc-3.46.0.0.jar" *.java
+
+EXECUTION:
+--------------------------------------------------------------------------------
+Run the application with:
+
+   java -cp ".;sqlite-jdbc-3.46.0.0.jar" StudentGUI
+
+Note: On Linux/Mac, use colon instead of semicolon:
+   java -cp ".:sqlite-jdbc-3.46.0.0.jar" StudentGUI
+
+FIRST RUN:
+--------------------------------------------------------------------------------
+- On first run, StudentDB.initializeDatabase() automatically creates the
+  database file (studentdb.db) and populates it with 3 sample students
+- No manual SQL execution required
+
+TROUBLESHOOTING:
+--------------------------------------------------------------------------------
+- "ClassNotFoundException: org.sqlite.JDBC" 
+  → SQLite JAR not in classpath, check -cp parameter
+  
+- "Error: Could not find or load main class StudentGUI"
+  → Compile first with javac before running
+  
+- Database locked error
+  → Close any other programs accessing studentdb.db file
+
+================================================================================
+
+
+
+
